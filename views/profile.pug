@@ -1,0 +1,17 @@
+html
+    head
+        title #{user.username}'s Profile
+body
+    div#main
+        a(href="/") Home
+        |
+        |
+        a(href="/users") Users
+        |
+        |
+        a(href="/register") Register
+        h1 Profile for #{user.username}:
+        h3 Order History:
+        each order in orderList
+            a(href="/orders/" + order._id) #{order._id}
+            br

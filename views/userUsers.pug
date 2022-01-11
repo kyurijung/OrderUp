@@ -1,0 +1,23 @@
+html
+    head
+        title Users
+body(onload="init()")
+    div#main
+        a(href="/") Home
+        |
+        |
+        a(href="/users") Users
+        |
+        |
+        a(href="/orderform") Order Food
+        |
+        |
+        a(href=`/users/${id}`) Your Profile
+        |
+        |
+        a(href="/loggedout")#logoutButton Logout
+        h1 Restaurant Ordering System Users:
+        each user in userList
+            a(href="/users/" + user._id) #{user.username}
+            br
+        script(src="/logout.js")

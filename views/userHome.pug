@@ -1,0 +1,20 @@
+html
+    head
+        title Restaurant Ordering System
+body(onload="init()")
+    div#main
+        a(href="/") Home
+        |
+        |
+        a(href="/users") Users
+        |
+        |
+        a(href="/orderform") Order Food
+        |
+        |
+        a(href=`/users/${id}`) Your Profile
+        |
+        |
+        a(href="/loggedout")#logoutButton Logout
+        h1 Welcome to the Restaurant Ordering System!
+        script(src="/logout.js")

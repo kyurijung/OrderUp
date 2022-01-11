@@ -1,0 +1,37 @@
+html
+    head
+        title Order Form
+        style(type="text/css").
+            .column {
+                float: left;
+            }
+            .main {
+                background-color: lightgray;
+            }
+body(onload="init()")
+    div
+        a(href='/') Home
+        |
+        |
+        a(href='/users') Users
+        |
+        |
+        a(href='/orderform') Order Food
+        |
+        |
+        a(href=`/users/${id}`) Your Profile
+        |
+        |
+        a(href='/loggedout')#logoutButton Logout
+        br
+        br
+        select#restaurant-select 
+        br
+        br
+        div#info
+        div#main
+            div#left.column.left(style={width:"10%"})
+            div#middle.column.middle(style={width:"25%"})
+            div#right.column.right(style={width:"65%"})
+        script!= `const theUsername = ${JSON.stringify(username)}`
+        script(src="orderform.js")

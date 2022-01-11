@@ -1,0 +1,35 @@
+html
+    head
+        title Profile
+body(onload="init()")
+    div#main
+        a(href="/") Home
+        |
+        |
+        a(href="/users") Users
+        |
+        |
+        a(href="/orderform") Order Food
+        |
+        |
+        a(href=`/users/${yourID}`) Your Profile
+        |
+        |
+        a(href="/loggedout")#logoutButton Logout
+        h1 Profile for #{user.username}:
+        if (yourID == id)
+            form Private Mode:
+                br
+                label(for='on') On
+                input(type='radio', name='privacy', value='on')#private
+                br
+                label(for='off') Off
+                input(type='radio', name='privacy', value='off')#public
+                br
+                input(type='submit', value='Submit')#submitButton
+        h3 Order History:
+        each order in orderList
+            a(href="/orders/" + order._id) #{order._id}
+            br
+        script!= `const theUser = ${JSON.stringify(user)}`
+        script(src="/privacy.js")

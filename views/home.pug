@@ -1,0 +1,23 @@
+html
+    head
+        title Restaurant Ordering System
+body(onload="init()")
+    div#main
+        a(href="/") Home
+        |
+        |
+        a(href="/users") Users
+        |
+        |
+        a(href="/register") Register
+        form(onsubmit="init()")
+            | Username: 
+            input(type='text', value='')#username
+            |
+            | Password: 
+            input(type='text', value='')#password
+            |
+            |
+            input(type='submit', value='Login')#loginButton
+        h1 Welcome to the Restaurant Ordering System!
+        script(src="/login.js")

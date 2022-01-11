@@ -1,0 +1,28 @@
+html
+    head
+        title Order
+body(onload="init()")
+    div#main
+        a(href="/") Home
+        |
+        |
+        a(href="/users") Users
+        |
+        |
+        a(href="/orderform") Order Food
+        |
+        |
+        a(href=`/users/${yourID}`) Your Profile
+        |
+        |
+        a(href="/loggedout")#logoutButton Logout
+        h1 Order for #{username}:
+        h3 #{fullOrder.restaurantName}
+        each item in fullOrder.order
+            li #{item.name} x #{item.quantity}
+            br
+        p Subtotal: $#{fullOrder.subtotal}
+        p Tax: $#{fullOrder.tax}
+        p Delivery Fee: $#{fullOrder.fee}
+        h3 Total: $#{fullOrder.total}
+        script(src="/logout.js")

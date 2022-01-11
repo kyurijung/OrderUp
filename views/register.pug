@@ -1,0 +1,23 @@
+html
+    head
+        title Register
+body(onload="init()")
+    div#main
+        a(href="/") Home
+        |
+        |
+        a(href="/users") Users
+        |
+        |
+        a(href="/register") Register
+        h1 Register here:
+        p#warning
+        form
+            | Username: 
+            input(type='text', value='')#username
+            br
+            | Password: 
+            input(type='text', value='')#password
+            br
+            input(type='submit', value='Register')#registerButton
+        script(src="/registerUser.js")
